@@ -1,24 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R4m-NZ-I7y">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="oTE-Nu-Bpk">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController modalPresentationStyle="overFullScreen" id="R4m-NZ-I7y" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m9Z-rm-h1q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HVh-ac-l9b">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Camera" style="plain" id="FA8-Wc-90r">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yaz-pW-0tv">
+                                            <rect key="frame" x="16" y="7" width="54" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Camera"/>
+                                            <connections>
+                                                <action selector="pickImageFromCamera:" destination="R4m-NZ-I7y" eventType="touchUpInside" id="hN7-yy-8Tp"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem title="Album" style="plain" id="9J2-HF-tJX">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4CJ-yH-SXR">
+                                            <rect key="frame" x="313" y="7" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Album"/>
+                                            <connections>
+                                                <action selector="pickImageFromAlbum:" destination="R4m-NZ-I7y" eventType="touchUpInside" id="6Dm-Ke-yR5"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VV6-tt-VGX">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="XmU-2n-yZ0">
+                                        <nil key="title"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Share" style="plain" id="g1q-Ua-bL1">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NNV-CC-x0y">
+                                                <rect key="frame" x="16" y="7" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Share"/>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" style="plain" id="Cab-SA-sXo">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i9X-cx-vED">
+                                                <rect key="frame" x="311" y="7" width="48" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Cancel"/>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uUq-MU-Ipk">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uUq-MU-Ipk" firstAttribute="leading" secondItem="i6i-OJ-kn2" secondAttribute="leading" id="QGi-tW-b2e"/>
+                            <constraint firstItem="uUq-MU-Ipk" firstAttribute="top" secondItem="i6i-OJ-kn2" secondAttribute="top" constant="44" id="S3m-Xn-DrT"/>
+                            <constraint firstItem="VV6-tt-VGX" firstAttribute="width" secondItem="m9Z-rm-h1q" secondAttribute="width" id="W2j-lR-XMQ"/>
+                            <constraint firstItem="i6i-OJ-kn2" firstAttribute="top" secondItem="VV6-tt-VGX" secondAttribute="bottom" constant="-44" id="hvc-SW-250"/>
+                            <constraint firstItem="VV6-tt-VGX" firstAttribute="centerX" secondItem="i6i-OJ-kn2" secondAttribute="centerX" id="jXo-wd-zPb"/>
+                            <constraint firstItem="uUq-MU-Ipk" firstAttribute="centerX" secondItem="i6i-OJ-kn2" secondAttribute="centerX" id="wSm-gw-iRb"/>
+                            <constraint firstItem="i6i-OJ-kn2" firstAttribute="bottom" secondItem="uUq-MU-Ipk" secondAttribute="bottom" constant="44" id="zeN-FU-GsP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="i6i-OJ-kn2"/>
                     </view>
+                    <connections>
+                        <outlet property="albumButton" destination="4CJ-yH-SXR" id="xHE-rm-Y38"/>
+                        <outlet property="cameraButton" destination="yaz-pW-0tv" id="p2O-qh-syv"/>
+                        <outlet property="imagePickerView" destination="uUq-MU-Ipk" id="KOE-Ca-afR"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="waE-Ql-GTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="164" y="121.88905547226388"/>
         </scene>
     </scenes>
 </document>
