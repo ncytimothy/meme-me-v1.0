@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HVh-ac-l9b">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVh-ac-l9b">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Camera" style="plain" id="FA8-Wc-90r">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yaz-pW-0tv">
@@ -33,7 +32,7 @@
                                     </barButtonItem>
                                     <barButtonItem title="Album" style="plain" id="9J2-HF-tJX">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4CJ-yH-SXR">
-                                            <rect key="frame" x="313" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="315" y="7" width="44" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Album"/>
                                             <connections>
@@ -50,7 +49,7 @@
                                         <nil key="title"/>
                                         <barButtonItem key="leftBarButtonItem" title="Share" style="plain" id="g1q-Ua-bL1">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NNV-CC-x0y">
-                                                <rect key="frame" x="16" y="7" width="46" height="30"/>
+                                                <rect key="frame" x="16" y="7" width="40" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Share"/>
                                             </button>
@@ -69,12 +68,42 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rmm-VF-cOB" userLabel="Upper Textfield">
+                                <rect key="frame" x="25" y="91" width="334" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="I2L-tT-q4M"/>
+                                    <constraint firstAttribute="width" constant="334" id="jah-kp-NIG"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oq8-20-lUW" userLabel="Lower Textfield">
+                                <rect key="frame" x="20.5" y="546" width="334" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fLL-M9-pma"/>
+                                    <constraint firstAttribute="width" constant="334" id="zfU-U3-vJe"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Oq8-20-lUW" firstAttribute="centerX" secondItem="i6i-OJ-kn2" secondAttribute="centerX" id="1Gp-Lo-jDh"/>
+                            <constraint firstItem="rmm-VF-cOB" firstAttribute="centerX" secondItem="i6i-OJ-kn2" secondAttribute="centerX" constant="4.5" id="5Dd-Wq-ikY"/>
+                            <constraint firstItem="rmm-VF-cOB" firstAttribute="top" secondItem="VV6-tt-VGX" secondAttribute="bottom" constant="27" id="7k6-e0-uCR"/>
+                            <constraint firstItem="HVh-ac-l9b" firstAttribute="top" secondItem="Oq8-20-lUW" secondAttribute="bottom" constant="27" id="9f2-Kc-bSh"/>
+                            <constraint firstItem="i6i-OJ-kn2" firstAttribute="trailing" secondItem="HVh-ac-l9b" secondAttribute="trailing" id="LKA-6Z-p2m"/>
                             <constraint firstItem="uUq-MU-Ipk" firstAttribute="leading" secondItem="i6i-OJ-kn2" secondAttribute="leading" id="QGi-tW-b2e"/>
                             <constraint firstItem="uUq-MU-Ipk" firstAttribute="top" secondItem="i6i-OJ-kn2" secondAttribute="top" constant="44" id="S3m-Xn-DrT"/>
                             <constraint firstItem="VV6-tt-VGX" firstAttribute="width" secondItem="m9Z-rm-h1q" secondAttribute="width" id="W2j-lR-XMQ"/>
+                            <constraint firstItem="HVh-ac-l9b" firstAttribute="leading" secondItem="i6i-OJ-kn2" secondAttribute="leading" id="XR2-ka-Ts1"/>
+                            <constraint firstItem="HVh-ac-l9b" firstAttribute="centerX" secondItem="i6i-OJ-kn2" secondAttribute="centerX" id="fgq-8B-6GJ"/>
+                            <constraint firstItem="i6i-OJ-kn2" firstAttribute="bottom" secondItem="HVh-ac-l9b" secondAttribute="bottom" id="gtf-2b-Nxl"/>
                             <constraint firstItem="i6i-OJ-kn2" firstAttribute="top" secondItem="VV6-tt-VGX" secondAttribute="bottom" constant="-44" id="hvc-SW-250"/>
                             <constraint firstItem="VV6-tt-VGX" firstAttribute="centerX" secondItem="i6i-OJ-kn2" secondAttribute="centerX" id="jXo-wd-zPb"/>
                             <constraint firstItem="uUq-MU-Ipk" firstAttribute="centerX" secondItem="i6i-OJ-kn2" secondAttribute="centerX" id="wSm-gw-iRb"/>
@@ -84,8 +113,10 @@
                     </view>
                     <connections>
                         <outlet property="albumButton" destination="4CJ-yH-SXR" id="xHE-rm-Y38"/>
+                        <outlet property="bottownTextfield" destination="Oq8-20-lUW" id="8Am-m6-MCN"/>
                         <outlet property="cameraButton" destination="yaz-pW-0tv" id="p2O-qh-syv"/>
                         <outlet property="imagePickerView" destination="uUq-MU-Ipk" id="KOE-Ca-afR"/>
+                        <outlet property="topTextfield" destination="rmm-VF-cOB" id="2Tg-sT-Op8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waE-Ql-GTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
