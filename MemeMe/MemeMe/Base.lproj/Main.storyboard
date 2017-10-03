@@ -59,6 +59,9 @@
                                                 <rect key="frame" x="311" y="7" width="48" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="pressCancel:" destination="R4m-NZ-I7y" eventType="touchUpInside" id="8nj-Vf-OhP"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -70,25 +73,23 @@
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rmm-VF-cOB" userLabel="Upper Textfield">
                                 <rect key="frame" x="25" y="91" width="334" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="I2L-tT-q4M"/>
                                     <constraint firstAttribute="width" constant="334" id="jah-kp-NIG"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oq8-20-lUW" userLabel="Lower Textfield">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oq8-20-lUW" userLabel="Lower Textfield">
                                 <rect key="frame" x="20.5" y="546" width="334" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="fLL-M9-pma"/>
                                     <constraint firstAttribute="width" constant="334" id="zfU-U3-vJe"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -113,7 +114,7 @@
                     </view>
                     <connections>
                         <outlet property="albumButton" destination="4CJ-yH-SXR" id="xHE-rm-Y38"/>
-                        <outlet property="bottownTextfield" destination="Oq8-20-lUW" id="8Am-m6-MCN"/>
+                        <outlet property="bottomTextfield" destination="Oq8-20-lUW" id="SVg-iP-YVY"/>
                         <outlet property="cameraButton" destination="yaz-pW-0tv" id="p2O-qh-syv"/>
                         <outlet property="imagePickerView" destination="uUq-MU-Ipk" id="KOE-Ca-afR"/>
                         <outlet property="topTextfield" destination="rmm-VF-cOB" id="2Tg-sT-Op8"/>
