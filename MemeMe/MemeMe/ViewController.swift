@@ -102,7 +102,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField.text == "" {
-            print("Tag: \(textField.tag)")
             switch textField.tag {
             case 0:
                 textField.text = topDefaultText
@@ -146,7 +145,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
-        print("keyboardWillShow called")
         if bottomTextfield.isFirstResponder {
             view.frame.origin.y -= getKeyboardHeight(notification)
         }
@@ -157,20 +155,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func getKeyboardHeight(_ notification: NSNotification)  -> CGFloat {
-        print("getkeyBoardHeight called")
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height
     }
     
     func subscribeToKeyboardNotifications() {
-        print("subscribeToKeyboardNotifications called")
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
     
     func unsubscribeToKeyboardNotifications() {
-        print("unsubscribeToKeyboardNotifications called")
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
@@ -197,7 +192,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func share(_ sender: Any) {
-        print("share called")
         let memedImage = generateMemedImge()
         let activityController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         self.present(activityController, animated: true, completion: nil)
