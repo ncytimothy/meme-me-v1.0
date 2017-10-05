@@ -11,19 +11,21 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var imagePickerView: UIImageView!
-    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var albumButton: UIButton!
     @IBOutlet weak var topTextfield: UITextField!
     @IBOutlet weak var bottomTextfield: UITextField!
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var shareButton: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIButton!
+    
     
     let topDefaultText = "TOP"
     let bottomDefaultText = "BOTTOM"
     var memedImage: UIImage?
 
+    
     struct Meme {
         var topText: String
         var bottomText: String
@@ -66,11 +68,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func enableShare() {
-        shareButton.isEnabled = topTextfield.text != topDefaultText && bottomTextfield.text != bottomDefaultText && imagePickerView.image != nil
+        shareButton.isEnabled = imagePickerView.image != nil
     }
     
     func enableReset() {
-        resetButton.isEnabled = topTextfield.text != topDefaultText || bottomTextfield.text != bottomDefaultText || imagePickerView.image != nil
+        cancelButton.isEnabled = topTextfield.text != topDefaultText || bottomTextfield.text != bottomDefaultText || imagePickerView.image != nil
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -89,10 +91,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textField.text = ""
     }
 
-    @IBAction func pressReset (_ sender: Any) {
+    @IBAction func pressCancel (_ sender: Any) {
         formatText()
-        enableReset()
         imagePickerView.image = nil
+        cancelButton.isEnabled = false
+        shareButton.isEnabled = false
     }
     
     
@@ -174,10 +177,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func generateMemedImge() -> UIImage {
         // TODO: Hide toolbar and navbar
+
         toolbar.isHidden = true
         navigationBar.isHidden = true
+        
+
         // Render view to an image
-        UIGraphicsBeginImageContext(self.view.frame.size)
+    
+        UIGraphicsBeginImageContextWithOptions(self.view.frame.size, false, 0.0)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
@@ -185,8 +192,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // TODO: Show toolbar and navbar
         toolbar.isHidden = false
         navigationBar.isHidden = false
-        toolbar.barTintColor = UIColor.white
-        navigationBar.barTintColor = UIColor.white
+        
         return memedImage
     }
     
