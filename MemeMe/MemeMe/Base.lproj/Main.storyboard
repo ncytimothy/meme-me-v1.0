@@ -5,6 +5,8 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,31 +44,6 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VV6-tt-VGX">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="XmU-2n-yZ0">
-                                        <nil key="title"/>
-                                        <barButtonItem key="leftBarButtonItem" title="Share" style="plain" id="g1q-Ua-bL1">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NNV-CC-x0y">
-                                                <rect key="frame" x="16" y="7" width="40" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Share"/>
-                                            </button>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Cancel" style="plain" id="Cab-SA-sXo">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i9X-cx-vED">
-                                                <rect key="frame" x="311" y="7" width="48" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Cancel"/>
-                                                <connections>
-                                                    <action selector="pressCancel:" destination="R4m-NZ-I7y" eventType="touchUpInside" id="8nj-Vf-OhP"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uUq-MU-Ipk">
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,24 +68,53 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VV6-tt-VGX">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="XmU-2n-yZ0">
+                                        <nil key="title"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Share" style="plain" id="g1q-Ua-bL1">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NNV-CC-x0y">
+                                                <rect key="frame" x="16" y="7" width="40" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Share"/>
+                                                <connections>
+                                                    <action selector="share:" destination="R4m-NZ-I7y" eventType="touchUpInside" id="PWz-jW-UaV"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" style="plain" id="Cab-SA-sXo">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i9X-cx-vED">
+                                                <rect key="frame" x="320" y="7" width="39" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Reset"/>
+                                                <connections>
+                                                    <action selector="pressReset:" destination="R4m-NZ-I7y" eventType="touchUpInside" id="8vg-q5-mJc"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Oq8-20-lUW" firstAttribute="centerX" secondItem="i6i-OJ-kn2" secondAttribute="centerX" id="1Gp-Lo-jDh"/>
                             <constraint firstItem="rmm-VF-cOB" firstAttribute="centerX" secondItem="i6i-OJ-kn2" secondAttribute="centerX" constant="4.5" id="5Dd-Wq-ikY"/>
+                            <constraint firstItem="uUq-MU-Ipk" firstAttribute="top" secondItem="VV6-tt-VGX" secondAttribute="bottom" id="5EI-Wo-eV2"/>
                             <constraint firstItem="rmm-VF-cOB" firstAttribute="top" secondItem="VV6-tt-VGX" secondAttribute="bottom" constant="27" id="7k6-e0-uCR"/>
                             <constraint firstItem="HVh-ac-l9b" firstAttribute="top" secondItem="Oq8-20-lUW" secondAttribute="bottom" constant="27" id="9f2-Kc-bSh"/>
+                            <constraint firstItem="HVh-ac-l9b" firstAttribute="top" secondItem="uUq-MU-Ipk" secondAttribute="bottom" id="I26-RI-ffE"/>
                             <constraint firstItem="i6i-OJ-kn2" firstAttribute="trailing" secondItem="HVh-ac-l9b" secondAttribute="trailing" id="LKA-6Z-p2m"/>
-                            <constraint firstItem="uUq-MU-Ipk" firstAttribute="leading" secondItem="i6i-OJ-kn2" secondAttribute="leading" id="QGi-tW-b2e"/>
-                            <constraint firstItem="uUq-MU-Ipk" firstAttribute="top" secondItem="i6i-OJ-kn2" secondAttribute="top" constant="44" id="S3m-Xn-DrT"/>
+                            <constraint firstItem="uUq-MU-Ipk" firstAttribute="leading" secondItem="i6i-OJ-kn2" secondAttribute="leading" id="UYE-SU-v1e"/>
                             <constraint firstItem="VV6-tt-VGX" firstAttribute="width" secondItem="m9Z-rm-h1q" secondAttribute="width" id="W2j-lR-XMQ"/>
                             <constraint firstItem="HVh-ac-l9b" firstAttribute="leading" secondItem="i6i-OJ-kn2" secondAttribute="leading" id="XR2-ka-Ts1"/>
+                            <constraint firstItem="uUq-MU-Ipk" firstAttribute="baseline" secondItem="HVh-ac-l9b" secondAttribute="firstBaseline" symbolType="layoutAnchor" id="dvA-EI-N3C"/>
                             <constraint firstItem="HVh-ac-l9b" firstAttribute="centerX" secondItem="i6i-OJ-kn2" secondAttribute="centerX" id="fgq-8B-6GJ"/>
                             <constraint firstItem="i6i-OJ-kn2" firstAttribute="bottom" secondItem="HVh-ac-l9b" secondAttribute="bottom" id="gtf-2b-Nxl"/>
+                            <constraint firstItem="uUq-MU-Ipk" firstAttribute="trailing" secondItem="i6i-OJ-kn2" secondAttribute="trailing" id="hvI-Lr-jS5"/>
                             <constraint firstItem="i6i-OJ-kn2" firstAttribute="top" secondItem="VV6-tt-VGX" secondAttribute="bottom" constant="-44" id="hvc-SW-250"/>
                             <constraint firstItem="VV6-tt-VGX" firstAttribute="centerX" secondItem="i6i-OJ-kn2" secondAttribute="centerX" id="jXo-wd-zPb"/>
-                            <constraint firstItem="uUq-MU-Ipk" firstAttribute="centerX" secondItem="i6i-OJ-kn2" secondAttribute="centerX" id="wSm-gw-iRb"/>
-                            <constraint firstItem="i6i-OJ-kn2" firstAttribute="bottom" secondItem="uUq-MU-Ipk" secondAttribute="bottom" constant="44" id="zeN-FU-GsP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i6i-OJ-kn2"/>
                     </view>
@@ -117,6 +123,10 @@
                         <outlet property="bottomTextfield" destination="Oq8-20-lUW" id="SVg-iP-YVY"/>
                         <outlet property="cameraButton" destination="yaz-pW-0tv" id="p2O-qh-syv"/>
                         <outlet property="imagePickerView" destination="uUq-MU-Ipk" id="KOE-Ca-afR"/>
+                        <outlet property="navigationBar" destination="VV6-tt-VGX" id="JwK-ra-Djc"/>
+                        <outlet property="resetButton" destination="i9X-cx-vED" id="ni9-mm-O32"/>
+                        <outlet property="shareButton" destination="NNV-CC-x0y" id="Ka8-0f-zVV"/>
+                        <outlet property="toolbar" destination="HVh-ac-l9b" id="hAE-LB-ITo"/>
                         <outlet property="topTextfield" destination="rmm-VF-cOB" id="2Tg-sT-Op8"/>
                     </connections>
                 </viewController>
