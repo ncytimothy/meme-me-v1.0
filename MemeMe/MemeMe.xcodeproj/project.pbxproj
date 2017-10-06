@@ -12,6 +12,7 @@
 		727142F31F800F1A0082BD1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 727142F11F800F1A0082BD1F /* Main.storyboard */; };
 		727142F51F800F1A0082BD1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727142F41F800F1A0082BD1F /* Assets.xcassets */; };
 		727142F81F800F1A0082BD1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 727142F61F800F1A0082BD1F /* LaunchScreen.storyboard */; };
+		72F3A1791F87F12400251BC1 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3A1781F87F12400251BC1 /* Meme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		727142F41F800F1A0082BD1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		727142F71F800F1A0082BD1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		727142F91F800F1A0082BD1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72F3A1781F87F12400251BC1 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				727142ED1F800F1A0082BD1F /* AppDelegate.swift */,
 				727142EF1F800F1A0082BD1F /* ViewController.swift */,
+				72F3A1781F87F12400251BC1 /* Meme.swift */,
 				727142F11F800F1A0082BD1F /* Main.storyboard */,
 				727142F41F800F1A0082BD1F /* Assets.xcassets */,
 				727142F61F800F1A0082BD1F /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72F3A1791F87F12400251BC1 /* Meme.swift in Sources */,
 				727142F01F800F1A0082BD1F /* ViewController.swift in Sources */,
 				727142EE1F800F1A0082BD1F /* AppDelegate.swift in Sources */,
 			);
@@ -274,11 +278,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.timothyng.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -288,11 +295,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.timothyng.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
