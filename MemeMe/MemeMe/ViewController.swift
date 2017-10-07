@@ -159,16 +159,15 @@ class ViewController: UIViewController {
         activityController.completionWithItemsHandler = { (activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
             if completed == true {
                 print(self.topTextfield.text)
-                self.save()
+                self.save(memedImage)
             }
         }
         self.present(activityController, animated: true, completion: nil)
     }
     
-    func save() {
+    func save(_ memedImage: UIImage) {
         if self.checkMemeCreation() {
-            print(topTextfield.text)
-            let meme = Meme(topText: topTextfield.text!, bottomText: bottomTextfield.text!, originalImage: imagePickerView.image!, memedImage: memedImage!)
+            let meme = Meme(topText: topTextfield.text!, bottomText: bottomTextfield.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         }
     }
     
