@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import UIKit
+
+class SentMemesCollectionViewController: UIViewController {
+    override func viewDidLoad() {
+        let appDelegate = 
+    }
+}

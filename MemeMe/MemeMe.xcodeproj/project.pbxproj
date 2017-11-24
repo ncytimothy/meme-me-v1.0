@@ -13,6 +13,7 @@
 		727142F51F800F1A0082BD1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727142F41F800F1A0082BD1F /* Assets.xcassets */; };
 		727142F81F800F1A0082BD1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 727142F61F800F1A0082BD1F /* LaunchScreen.storyboard */; };
 		72F3A1791F87F12400251BC1 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F3A1781F87F12400251BC1 /* Meme.swift */; };
+		72F91CCE1FC8827B00213AF2 /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F91CCD1FC8827B00213AF2 /* SentMemesCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		727142F71F800F1A0082BD1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		727142F91F800F1A0082BD1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72F3A1781F87F12400251BC1 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		72F91CCD1FC8827B00213AF2 /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				727142ED1F800F1A0082BD1F /* AppDelegate.swift */,
 				727142EF1F800F1A0082BD1F /* ViewController.swift */,
+				72F91CCD1FC8827B00213AF2 /* SentMemesCollectionViewController.swift */,
 				72F3A1781F87F12400251BC1 /* Meme.swift */,
 				727142F11F800F1A0082BD1F /* Main.storyboard */,
 				727142F41F800F1A0082BD1F /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 			files = (
 				72F3A1791F87F12400251BC1 /* Meme.swift in Sources */,
 				727142F01F800F1A0082BD1F /* ViewController.swift in Sources */,
+				72F91CCE1FC8827B00213AF2 /* SentMemesCollectionViewController.swift in Sources */,
 				727142EE1F800F1A0082BD1F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

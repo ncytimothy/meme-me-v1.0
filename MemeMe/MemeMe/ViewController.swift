@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class MemeEditorVC: UIViewController {
+    
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var albumButton: UIButton!
@@ -20,19 +20,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIButton!
     
+   
+
+    
     let topDefaultText = "TOP"
     let bottomDefaultText = "BOTTOM"
     var memedImage: UIImage?
     let memeTextFormat: [String:Any] = [NSAttributedStringKey.strokeColor.rawValue:UIColor.black, NSAttributedStringKey.foregroundColor.rawValue:UIColor.white, NSAttributedStringKey.font.rawValue:UIFont.init(name: "HelveticaNeue-CondensedBlack", size: 40), NSAttributedStringKey.strokeWidth.rawValue:-3.0]
     
-    struct Meme {
-        var topText: String
-        var bottomText: String
-        var originalImage: UIImage
-        var memedImage: UIImage
-    }
-
-
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -99,12 +94,12 @@ class ViewController: UIViewController {
        let imagePickerController = UIImagePickerController()
        imagePickerController.delegate = self
        imagePickerController.sourceType = sourceType
-       self.present(imagePickerController, animated: true, completion: nil)
+       present(imagePickerController, animated: true, completion: nil)
     }
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
         if bottomTextfield.isFirstResponder {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
@@ -130,14 +125,13 @@ class ViewController: UIViewController {
     
     func generateMemedImge() -> UIImage {
         // TODO: Hide toolbar and navbar
-
+        
         shouldHideBars(true)
         
-
         // Render view to an image
     
-        UIGraphicsBeginImageContextWithOptions(self.view.frame.size, false, 0.0)
-        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
+        view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
@@ -158,16 +152,19 @@ class ViewController: UIViewController {
         let activityController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         activityController.completionWithItemsHandler = { (activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
             if completed == true {
-                print(self.topTextfield.text)
                 self.save(memedImage)
             }
         }
-        self.present(activityController, animated: true, completion: nil)
+        present(activityController, animated: true, completion: nil)
     }
     
     func save(_ memedImage: UIImage) {
-        if self.checkMemeCreation() {
+        if checkMemeCreation() {
             let meme = Meme(topText: topTextfield.text!, bottomText: bottomTextfield.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
+            
+            let object = UIApplication.shared.delegate
+            let appDelegate = object as! AppDelegate
+            appDelegate.memes.append(meme)
         }
     }
     
@@ -179,7 +176,7 @@ class ViewController: UIViewController {
 
 //MARK: - UITextFieldDelegate, UINavigationControllerDelegate
 
-extension ViewController: UITextFieldDelegate, UINavigationControllerDelegate {
+extension MemeEditorVC: UITextFieldDelegate, UINavigationControllerDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         enableReset()
         enableShare()
@@ -209,19 +206,19 @@ extension ViewController: UITextFieldDelegate, UINavigationControllerDelegate {
 
 //MARK: - UIImagePickerControllerDelegate
 
-extension ViewController: UIImagePickerControllerDelegate {
+extension MemeEditorVC: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
-            self.imagePickerView.image = image
-            self.imagePickerView.contentMode = .scaleAspectFit
+            imagePickerView.image = image
+            imagePickerView.contentMode = .scaleAspectFit
             enableReset()
             enableShare()
         }
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
 
